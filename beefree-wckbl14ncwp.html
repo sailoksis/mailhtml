@@ -120,21 +120,141 @@
 <table border="0" cellpadding="30" cellspacing="0" class="image_block block-1" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad">
-<div align="center" class="alignment" style="line-height:10px"><img alt="Logo" src="https://raw.githubusercontent.com/sailoksis/mailhtml/main/images/logo.webp" style="display: block; height: auto; border: 0; width: 136px; max-width: 100%;" title="Logo" width="136"/></div>
+<div align="center" class="alignment" style="line-height:10px"><img alt="Logo" src="https://raw.githubusercontent.com/sailoksis/mailhtml/main/images/logo.webp" style="display: block; height: auto; border: 0; width: 180px; max-width: 100%;" title="Logo" width="136"/></div>
 </td>
 </tr>
 </table>
 <table border="0" cellpadding="0" cellspacing="0" class="image_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:20px;padding-left:30px;padding-right:30px;padding-top:10px;width:100%;">
-<div align="center" class="alignment" style="line-height:10px"><img alt="Header" class="big" src="images/header_1.png" style="display: block; height: auto; border: 0; width: 578px; max-width: 100%;" title="Header" width="578"/></div>
+<div align="center" class="alignment" style="line-height:10px"><img alt="Header" class="big" src="https://raw.githubusercontent.com/sailoksis/mailhtml/main/images/tarack.webp" style="display: block; height: auto; border: 0; width: 578px; max-width: 100%;" title="Header" width="578"/><div class="centered"><H1 .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);}></H1>Centered</div></div>
+	<div class="slider">
+		<input type="radio" name="slide_switch" id="id1"/>
+		<label for="id1">
+			<img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>
+		
+		<!--Lets show the second image by default on page load-->
+		<input type="radio" name="slide_switch" id="id2" checked="checked"/>
+		<label for="id2">
+			<img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+		
+		<input type="radio" name="slide_switch" id="id3"/>
+		<label for="id3">
+			<img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+		
+		<input type="radio" name="slide_switch" id="id4"/>
+		<label for="id4">
+			<img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+		
+		<input type="radio" name="slide_switch" id="id5"/>
+		<label for="id5">
+			<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+	  
+		  <input type="radio" name="slide_switch" id="id6"/>
+		<label for="id6">
+			<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+	  
+		  <input type="radio" name="slide_switch" id="id7"/>
+		<label for="id7">
+			<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+	  
+		  <input type="radio" name="slide_switch" id="id8"/>
+		<label for="id8">
+			<img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="50"/>
+		</label>
+		<img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+	</div>
+	
+	
+	
+	<style>
+		* {margin: 0; padding: 0;}
+body {background: #ccc;}
+
+.slider{
+	width: 640px; /*Same as width of the large image*/
+	position: relative;
+	/*Instead of height we will use padding*/
+	padding-top: 340px; /*>>>In this problem if more 5 images :)<<<*/
+	margin: 100px auto;
+	/*Lets add a shadow*/
+	box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider>img{
+	position: absolute;
+	left: 0; top: 0;
+	transition: all 0.5s;
+}
+
+.slider input[name='slide_switch'] {
+	display: none;
+}
+
+.slider label {
+	/*Lets add some spacing for the thumbnails*/
+	margin: 18px 0 0 18px;
+	border: 3px solid #999;
+	float: left;
+	cursor: pointer;
+	transition: all 0.5s;
+	/*Default style = low opacity*/
+	opacity: 0.6;
+}
+
+.slider label img{
+	display: block;
+}
+
+/*Time to add the click effects*/
+.slider input[name='slide_switch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch'] ~ img {
+	opacity: 0;
+	transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider input[name='slide_switch']:checked+label+img {
+	opacity: 1;
+	transform: scale(1);
+}
+/*Clicking on any thumbnail now should activate the image related to it*/
+
+/*We are done :)*/
+	</style>
 </td>
 </tr>
 </table>
 <table border="0" cellpadding="0" cellspacing="0" class="heading_block block-3" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:10px;padding-left:30px;padding-right:30px;padding-top:30px;text-align:center;width:100%;">
-<h1 style="margin: 0; color: #ff6464; direction: ltr; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 30px; font-weight: normal; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">Back to School in style!</h1>
+<h1 style="margin: 0; color: #ff6464; direction: ltr; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 30px; font-weight: normal; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">Расчитать ставку!</h1>
 </td>
 </tr>
 </table>
@@ -198,7 +318,7 @@
 <tr>
 <td class="pad" style="padding-bottom:20px;padding-top:20px;text-align:center;">
 <div align="center" class="alignment">
-<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.example.com" style="height:64px;width:378px;v-text-anchor:middle;" arcsize="0%" strokeweight="0.75pt" strokecolor="transparent" fill="false"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ff6464; font-family:Arial, sans-serif; font-size:26px"><![endif]--><a href="https://www.example.com" style="text-decoration:none;display:inline-block;color:#ff6464;background-color:transparent;border-radius:0px;width:auto;border-top:1px solid transparent;font-weight:undefined;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Cabin, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:26px;text-align:center;mso-border-alt:none;word-break:keep-all;" target="_blank"><span style="padding-left:60px;padding-right:60px;font-size:26px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word;"><span data-mce-style="" style="line-height: 52px;">Our Favorite Features</span></span></span></a>
+<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.example.com" style="height:64px;width:378px;v-text-anchor:middle;" arcsize="0%" strokeweight="0.75pt" strokecolor="transparent" fill="false"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ff6464; font-family:Arial, sans-serif; font-size:26px"><![endif]--><a href="https://www.example.com" style="text-decoration:none;display:inline-block;color:#ff6464;background-color:transparent;border-radius:0px;width:auto;border-top:1px solid transparent;font-weight:undefined;border-right:1px solid transparent;border-bottom:1px solid transparent;border-left:1px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Cabin, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:26px;text-align:center;mso-border-alt:none;word-break:keep-all;" target="_blank"><span style="padding-left:60px;padding-right:60px;font-size:26px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word;"><span data-mce-style="" style="line-height: 52px;">Наши услуги</span></span></span></a>
 <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
 </div>
 </td>
@@ -223,7 +343,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-<div align="center" class="alignment" style="line-height:10px"><img alt="I'm an image" src="images/feather2.png" style="display: block; height: auto; border: 0; width: 102px; max-width: 100%;" title="I'm an image" width="102"/></div>
+<div align="center" class="alignment" style="line-height:10px"><img alt="I'm an image" src="https://raw.githubusercontent.com/sailoksis/mailhtml/main/images/q1.webp" style="display: block; height: auto; border: 0; width: 102px; max-width: 100%;" title="I'm an image" width="102"/></div>
 </td>
 </tr>
 </table>
@@ -232,7 +352,7 @@
 <td class="pad">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Cabin, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;">
-<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><span style="font-size:18px;"><strong>Light </strong><strong>Weight</strong></span></p>
+<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><span style="font-size:18px;"><strong>Собственный экспресс поезд<strong></strong></span></p>
 </div>
 </div>
 </td>
@@ -243,7 +363,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:20px;width:100%;">
-<div align="center" class="alignment" style="line-height:10px"><img alt="I'm an image" src="images/waterproof.png" style="display: block; height: auto; border: 0; width: 68px; max-width: 100%;" title="I'm an image" width="68"/></div>
+<div align="center" class="alignment" style="line-height:10px"><img alt="I'm an image" src="https://raw.githubusercontent.com/sailoksis/mailhtml/main/images/q6.webp" style="display: block; height: auto; border: 0; width: 68px; max-width: 100%;" title="I'm an image" width="68"/></div>
 </td>
 </tr>
 </table>
@@ -252,7 +372,8 @@
 <td class="pad" style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:10px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Cabin, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;">
-<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><span style="font-size:18px;"><strong>Waterproof</strong></span></p>
+<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><span style="font-size:18px;"><strong>Закупка товара
+	Поиск производителя</strong></span></p>
 </div>
 </div>
 </td>
@@ -263,7 +384,7 @@
 <table border="0" cellpadding="0" cellspacing="0" class="image_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 <tr>
 <td class="pad" style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:20px;width:100%;">
-<div align="center" class="alignment" style="line-height:10px"><img alt="I'm an image" src="images/blocks2.png" style="display: block; height: auto; border: 0; width: 68px; max-width: 100%;" title="I'm an image" width="68"/></div>
+<div align="center" class="alignment" style="line-height:10px"><img alt="I'm an image" src="https://raw.githubusercontent.com/sailoksis/mailhtml/main/images/q2.webp" style="display: block; height: auto; border: 0; width: 68px; max-width: 100%;" title="I'm an image" width="68"/></div>
 </td>
 </tr>
 </table>
@@ -272,7 +393,7 @@
 <td class="pad" style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:10px;">
 <div style="font-family: sans-serif">
 <div class="" style="font-size: 12px; font-family: Cabin, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;">
-<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><strong><span style="font-size:18px;">Intuitive Interior Organization</span></strong></p>
+<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><strong><span style="font-size:18px;">Развитая складская логистика</span></strong></p>
 </div>
 </div>
 </td>
